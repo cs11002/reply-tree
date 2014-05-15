@@ -9,9 +9,7 @@
     <!-- Loading Flat UI -->
     <link href="css/flat-ui.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
-
     <link rel="shortcut icon" href="images/favicon.ico">
-
   </head>
   <body>
     <img src="images/logo.png"/>
@@ -23,7 +21,8 @@
     <?php } ?>
     <section>
       <article>
-        <input type="text" placeholder="Tweet..." class="form-control" /><br/>
+        <input type="text" placeholder="Tweet..." class="form-control" onkeyup="ShowLength(value);" /><br/>
+        <p id="inputlength">0文字/124文字</p>
         <button class="btn btn-info">Tweet</button><br/>
         <hr>
       </article>    
@@ -33,4 +32,9 @@
   <footer>
     Reply-treeは現在開発中です
   </footer>
+  <script type="text/javascript"><!--
+   function ShowLength( str ) {
+      document.getElementById("inputlength").innerHTML = str.length + "文字/124文字";
+   }
+// --></script>
 </html>

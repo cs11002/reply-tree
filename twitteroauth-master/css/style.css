@@ -20,9 +20,12 @@ pre {
 	border: none;
 }
 footer {
-
 }
 button.btn.btn-info {
 	float: right;	
 	margin-right: 5%;
+}
+p#inputlength {
+	float: left;
+	padding: 0 10px;
 }
