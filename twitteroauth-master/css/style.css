@@ -8,16 +8,12 @@ body {
 img {
 	padding:3px;	
 }
-
-
-
 span {
-	font-size: 1.6em;
+	font-size: 1.4em;
 	padding:0 10px;
 }
 article { 
 	background-color: white;
-
 	padding:10px;
 }
 pre {
@@ -26,7 +22,6 @@ pre {
 footer {
 
 }
-
 button.btn.btn-info {
 	float: right;	
 	margin-right: 5%;

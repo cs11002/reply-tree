@@ -14,23 +14,21 @@
 
   </head>
   <body>
-    <div>
-      <img src="images/logo.png"/>
+    <img src="images/logo.png"/>
       <?php if (isset($menu)) { ?>
         <?php echo $menu; ?>
       <?php } ?>
-    </div>
     <?php if (isset($status_text)) { ?>
       <?php echo '<h3>'.$status_text.'</h3>'; ?>
     <?php } ?>
-    <p>
-      <pre>
-        <input type="text" placeholder="Tweet..." class="form-control" />
-        <button class="btn btn-info">Tweet</button>
+    <section>
+      <article>
+        <input type="text" placeholder="Tweet..." class="form-control" /><br/>
+        <button class="btn btn-info">Tweet</button><br/>
         <hr>
-        <?php print_r($content); ?>
-      </pre>
-    </p>
+      </article>    
+      <?php print_r($content); ?>
+    </section>
   </body>
   <footer>
     Reply-treeは現在開発中です

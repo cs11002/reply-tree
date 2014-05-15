@@ -4,6 +4,9 @@
  * User has successfully authenticated with Twitter. Access tokens saved to session and DB.
  */
 
+mb_internal_encoding("UTF-8");
+ini_set( 'display_errors', "1" );
+
 /* Load required lib files. */
 session_start();
 require_once('twitteroauth/twitteroauth.php');
@@ -20,7 +23,26 @@ $access_token = $_SESSION['access_token'];
 $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
 
 /* If method is set change API call made. Test is called by default. */
-$content = $connection->get('statuses/user_timeline',array('count'=>'10'));
+
+$json = $connection->get('statuses/home_timeline',array('count'=>'5'));
+
+$tweet = '';
+
+for ( $i=0; $i<5; $i++ ){
+
+	$tweet .= '<article id='.$i.'><img src="'.$json[$i]->user->profile_image_url.'"/>';
+	$tweet .= '<span>'.$json[$i]->user->name.'</span>';
+	$tweet .= '@'.$json[$i]->user->screen_name.'<br/>';
+	$tweet .= $json[$i]->text.'<br/>';
+	$tweet .= $json[$i]->created_at.'<hr/></article>';
+
+}
+
+
+$content = $tweet;
+
+// $content = $connection->get('statuses/user_timeline',array('count'=>'5'));
+
 
 /* Some example calls */
 //$connection->get('users/show', array('screen_name' => 'abraham'));
