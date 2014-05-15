@@ -488,8 +488,8 @@ pre {
   font-size: 13px;
   line-height: 1.72222;
   color: inherit;
-  /*background-color: #ffffff;*/
-  /*border: 2px solid #e7e9ec;*/
+  background-color: #ffffff;
+  border: 2px solid #e7e9ec;
   border-radius: 6px;
   white-space: pre;
 }
