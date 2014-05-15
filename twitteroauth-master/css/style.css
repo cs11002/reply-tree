@@ -1,0 +1,21 @@
+* {
+	font-family:'Lucida Grande', sans-serif;
+}
+body {
+	background-color: #E0FFFF;
+}
+img {
+	padding:3px;	
+}
+#logo {
+	padding-left:5%;
+}
+span {
+	font-size: 1.6em;
+	padding:0 10px;
+}
+article { 
+	background-color: white;
+	margin: 0 15%;
+	padding:10px;
+}
