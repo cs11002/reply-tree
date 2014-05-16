@@ -34,7 +34,13 @@ for ( $i=0; $i<5; $i++ ){
 	$tweet .= '<span>'.$json[$i]->user->name.'</span>';
 	$tweet .= '@'.$json[$i]->user->screen_name.'<br/>';
 	$tweet .= $json[$i]->text.'<br/>';
-	$tweet .= $json[$i]->created_at.'<hr/></article>';
+	$tweet .= $json[$i]->created_at;
+
+	if( $json[$i]->in_reply_to_status_id != null ){
+		$tweet .= '<button class="btn btn-primary">ReplyTree表示</button>';
+	}
+
+	$tweet .= '<hr/></article>';
 
 }
 
