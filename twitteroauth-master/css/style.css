@@ -20,11 +20,9 @@ footer {
 }
 button.btn.btn-info {
 	float: right;	
-	margin-right: 5%;
 }
 button.btn.btn-primary {
 	float: right;
-	margin-right: 5%;
 }
 p#inputlength {
 	float: left;
@@ -35,4 +33,7 @@ footer {
 	}
 input.btn.btn-info {
 	float: right;
+}
+input.form-control:focus {
+	border-color: #3498DB;
 }
