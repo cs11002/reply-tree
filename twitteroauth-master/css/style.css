@@ -1,6 +1,3 @@
-* {
-	font-family:'Lucida Grande', sans-serif;
-}
 body {
 	background-color: #E0FFFF;
 	margin: 0 15%;
@@ -32,3 +29,6 @@ p#inputlength {
 footer { 
 	margin-top: 10px;
 	}
+input.btn.btn-info{
+	float: right;
+}

@@ -25,7 +25,7 @@
         <p id="inputlength">0文字/124文字</p>
         <button class="btn btn-info">Tweet</button><br/>
         <hr>
-      </article> 
+      </article>
       <?php print_r($content); ?>
     </section>
   </body>
