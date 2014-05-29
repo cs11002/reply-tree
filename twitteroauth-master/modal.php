@@ -1,1 +1,3 @@
-<div id="div787"><<モーダルウィンドウ内に表示する要素>></div>
+<div id="div787">
+	<img src="./images/photo1.jpg" width="50%" height="50%">
+</div>
