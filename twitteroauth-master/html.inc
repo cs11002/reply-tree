@@ -24,18 +24,13 @@
     <section>
       <article>
         <input type="text" placeholder="Tweet..." class="form-control" onkeyup="ShowLength(value);" /><br/>
-        <p id="inputlength">0文字/124文字</p>
+        <p id="inputlength">0文字/140文字</p>
         <button class="btn btn-info">Tweet</button><br/>
         <hr>
 <!--        
         <a rel="leanModal" href="#div787">Edit</a>
         -->
         <?php require('modal.php'); ?>
-
-
-
-
-
 
       </article>
       <?php print_r($content); ?>
