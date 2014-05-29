@@ -9,6 +9,8 @@
     <!-- Loading Flat UI -->
     <link href="css/flat-ui.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
+    <script src="./js/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="./js/jquery.leanModal.min.js"></script>
     <link rel="shortcut icon" href="images/favicon.ico">
   </head>
   <body>
@@ -25,6 +27,16 @@
         <p id="inputlength">0文字/124文字</p>
         <button class="btn btn-info">Tweet</button><br/>
         <hr>
+<!--        
+        <a rel="leanModal" href="#div787">Edit</a>
+        -->
+        <?php require('modal.php'); ?>
+
+
+
+
+
+
       </article>
       <?php print_r($content); ?>
     </section>
@@ -37,4 +49,14 @@
       document.getElementById("inputlength").innerHTML = str.length + "文字/124文字";
    }
 // --></script>
+  <script type="text/javascript">
+    $(function() {
+      $('a[rel*=leanModal]').leanModal({
+        top: 40,
+        overlay : 0.5, 
+        closeButton: ".modal_close",
+      });
+    }); 
+  </script>
+
 </html>

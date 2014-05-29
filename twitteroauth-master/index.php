@@ -37,13 +37,14 @@ for ( $i=0; $i<5; $i++ ){
 	$tweet .= $json[$i]->created_at;
 
 	if( $json[$i]->in_reply_to_status_id != null ){
-		$tweet .= '<button class="btn btn-primary">ReplyTree表示</button>';
+		$tweet .= '<form method="get">';
+		$tweet .= '<a rel="leanModal" href="#div787"><input type="submit" class="btn btn-primary" value="ReplyTree表示" /></a>';
+		$tweet .= '</form><br/>';
 	}
 
 	$tweet .= '<hr/></article>';
 
 }
-
 
 $content = $tweet;
 
