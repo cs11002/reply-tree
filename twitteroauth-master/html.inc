@@ -41,7 +41,7 @@
   </footer>
   <script type="text/javascript"><!--
    function ShowLength( str ) {
-      document.getElementById("inputlength").innerHTML = str.length + "文字/124文字";
+      document.getElementById("inputlength").innerHTML = str.length + "文字/140文字";
    }
 // --></script>
   <script type="text/javascript">
