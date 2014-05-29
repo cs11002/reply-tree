@@ -33,6 +33,7 @@ footer {
 	}
 input.btn.btn-info {
 	float: right;
+  width: 100px;
 }
 input.form-control:focus {
 	border-color: #3498DB;
