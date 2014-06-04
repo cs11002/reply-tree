@@ -39,7 +39,7 @@ for ( $i=0; $i<5; $i++ ){
 	if( $json[$i]->in_reply_to_status_id != null ){
 		$tweet .= '<form method="get">';
 		$tweet .= '<a rel="leanModal" href="#div787"><input type="submit" class="btn btn-primary" value="ReplyTree表示" /></a>';
-		$tweet .= '</form><br/>';
+		$tweet .= '</form>';
 	}
 
 	$tweet .= '<hr/></article>';

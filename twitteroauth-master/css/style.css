@@ -23,6 +23,7 @@ button.btn.btn-info {
 }
 input.btn.btn-primary {
 	float: right;
+  margin-top: -30px;
 }
 p#inputlength {
 	float: left;
