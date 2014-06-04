@@ -24,9 +24,9 @@
     <section>
       <article>
         <form action="post.php" method="post">
-          <input type="text" placeholder="Tweet..." class="form-control" onkeyup="ShowLength(value);" /><br/>
+          <input type="text" name="tweet" placeholder="Tweet..." class="form-control" onkeyup="ShowLength(value);" /><br/>
           <p id="inputlength">0文字/140文字</p>
-          <input class="btn btn-info" value="Tweet" /><br/>
+          <input type="submit" class="btn btn-info" value="Tweet" /><br/>
         </form>
         <hr>
 <!--        
