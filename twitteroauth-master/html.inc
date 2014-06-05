@@ -14,7 +14,9 @@
     <link rel="shortcut icon" href="images/favicon.ico">
   </head>
   <body>
-    <img src="images/logo.png"/>
+    <a href="./index.php">
+      <img src="images/logo.png"/>
+    </a>
       <?php if (isset($menu)) { ?>
         <?php echo $menu; ?>
       <?php } ?>
