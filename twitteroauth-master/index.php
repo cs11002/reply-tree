@@ -37,10 +37,18 @@ for ( $i=0; $i<5; $i++ ){
 	$tweet .= $json[$i]->created_at;
 
 	if( $json[$i]->in_reply_to_status_id != null ){
-		$tweet .= '<form method="get">';
-		$tweet .= '<a rel="leanModal" href="#div787"><input type="submit" class="btn btn-primary" value="ReplyTree表示" /></a>';
+		$tweet .= '<form action="modal.php" method="post">';
+		$tweet .= '<input type="hidden" name="tweetID" value="'.$i.'" />';
+		$tweet .= '<button type="submit" class="btn btn-primary">ReplyTree表示</button>';
 		$tweet .= '</form>';
 	}
+
+
+	// if( $json[$i]->in_reply_to_status_id != null ){
+	// 	$tweet .= '<form method="get">';
+	// 	$tweet .= '<a rel="leanModal" href="#div787"><input type="submit" class="btn btn-primary" value="ReplyTree表示" /></a>';
+	// 	$tweet .= '</form>';
+	// }
 
 	$tweet .= '<hr/></article>';
 
