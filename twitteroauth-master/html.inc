@@ -29,11 +29,10 @@
           <input type="submit" class="btn btn-info" value="Tweet" /><br/>
         </form>
         <hr>
-<!--        
+<!--
         <a rel="leanModal" href="#div787">Edit</a>
-        -->
-        <?php require('modal.php'); ?>
-
+      -->
+        
       </article>
       <?php print_r($content); ?>
     </section>
