@@ -1,39 +1,58 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Twitter OAuth in PHP</title>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <style type="text/css">
-      img {border-width: 0}
-      * {font-family:'Lucida Grande', sans-serif;}
-    </style>
+    <meta charset="utf-8">
+    <title>Reply-tree</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Loading Bootstrap -->
+    <link href="./bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Loading Flat UI -->
+    <link href="css/flat-ui.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <script src="./js/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="./js/jquery.leanModal.min.js"></script>
+    <link rel="shortcut icon" href="images/favicon.ico">
   </head>
   <body>
-    <div>
-      <h2>Welcome to a Twitter OAuth PHP example.</h2>
-
-      <p>This site is a basic showcase of Twitters OAuth authentication method. If you are having issues try <a href='./clearsessions.php'>clearing your session</a>.</p>
-
-      <p>
-        Links:
-        <a href='http://github.com/abraham/twitteroauth'>Source Code</a> &amp;
-        <a href='http://wiki.github.com/abraham/twitteroauth/documentation'>Documentation</a> |
-        Contact @<a href='http://twitter.com/abraham'>abraham</a>
-      </p>
-      <hr />
+    <img src="images/logo.png"/>
       <?php if (isset($menu)) { ?>
         <?php echo $menu; ?>
       <?php } ?>
-    </div>
     <?php if (isset($status_text)) { ?>
       <?php echo '<h3>'.$status_text.'</h3>'; ?>
     <?php } ?>
-    <p>
-      <pre>
-        <?php print_r($content); ?>
-      </pre>
-    </p>
-
+    <section>
+      <article>
+        <form action="post.php" method="post">
+          <input type="text" name="tweet" placeholder="Tweet..." class="form-control" onkeyup="ShowLength(value);" /><br/>
+          <p id="inputlength">0文字/140文字</p>
+          <input type="submit" class="btn btn-info" value="Tweet" /><br/>
+        </form>
+        <hr>
+<!--
+        <a rel="leanModal" href="#div787">Edit</a>
+      -->
+        
+      </article>
+      <?php print_r($content); ?>
+    </section>
   </body>
+  <footer>
+    Reply-treeは現在開発中です
+  </footer>
+  <script type="text/javascript"><!--
+   function ShowLength( str ) {
+      document.getElementById("inputlength").innerHTML = str.length + "文字/140文字";
+   }
+// --></script>
+  <script type="text/javascript">
+    $(function() {
+      $('a[rel*=leanModal]').leanModal({
+        top: 40,
+        overlay : 0.5, 
+        closeButton: ".modal_close",
+      });
+    }); 
+  </script>
+
 </html>
