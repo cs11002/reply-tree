@@ -24,7 +24,7 @@ $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oau
 
 /* If method is set change API call made. Test is called by default. */
 
-$json = $connection->get('statuses/home_timeline',array('count'=>'5'));
+$json = $connection->get('statuses/user_timeline',array('count'=>'5'));
 
 $tweet = '';
 
@@ -37,13 +37,14 @@ for ( $i=0; $i<5; $i++ ){
 	$tweet .= $json[$i]->created_at;
 
 	if( $json[$i]->in_reply_to_status_id != null ){
-		$tweet .= '<button class="btn btn-primary">ReplyTree表示</button>';
+		$tweet .= '<form method="get">';
+		$tweet .= '<a rel="leanModal" href="#div787"><input type="submit" class="btn btn-primary" value="ReplyTree表示" /></a>';
+		$tweet .= '</form>';
 	}
 
 	$tweet .= '<hr/></article>';
 
 }
-
 
 $content = $tweet;
 

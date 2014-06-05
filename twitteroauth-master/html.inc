@@ -9,6 +9,8 @@
     <!-- Loading Flat UI -->
     <link href="css/flat-ui.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
+    <script src="./js/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="./js/jquery.leanModal.min.js"></script>
     <link rel="shortcut icon" href="images/favicon.ico">
   </head>
   <body>
@@ -21,10 +23,17 @@
     <?php } ?>
     <section>
       <article>
-        <input type="text" placeholder="Tweet..." class="form-control" onkeyup="ShowLength(value);" /><br/>
-        <p id="inputlength">0文字/124文字</p>
-        <button class="btn btn-info">Tweet</button><br/>
+        <form action="post.php" method="post">
+          <input type="text" name="tweet" placeholder="Tweet..." class="form-control" onkeyup="ShowLength(value);" /><br/>
+          <p id="inputlength">0文字/140文字</p>
+          <input type="submit" class="btn btn-info" value="Tweet" /><br/>
+        </form>
         <hr>
+<!--        
+        <a rel="leanModal" href="#div787">Edit</a>
+        -->
+        <?php require('modal.php'); ?>
+
       </article>
       <?php print_r($content); ?>
     </section>
@@ -34,7 +43,17 @@
   </footer>
   <script type="text/javascript"><!--
    function ShowLength( str ) {
-      document.getElementById("inputlength").innerHTML = str.length + "文字/124文字";
+      document.getElementById("inputlength").innerHTML = str.length + "文字/140文字";
    }
 // --></script>
+  <script type="text/javascript">
+    $(function() {
+      $('a[rel*=leanModal]').leanModal({
+        top: 40,
+        overlay : 0.5, 
+        closeButton: ".modal_close",
+      });
+    }); 
+  </script>
+
 </html>
