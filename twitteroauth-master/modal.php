@@ -18,12 +18,25 @@
 		$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
 
 		/* If method is set change API call made. Test is called by default. */
-		$json = $connection->get('statuses/user_timeline',array('count'=>'5'));
- 	
- 		echo "<br / >";
- 		echo $json[$_POST['tweetID']]->id;
+		//最初のツイートを取得
+		$api = 'statuses/show/'.$_POST['tweetID'];
+		$c = 0;
+		$tweet = array();//会話一覧を保持する配列
+		$tweet[$c] = $connection->get($api);
+
+ 		//最初のツイートからリプライをたどる
+	 	while($tweet[$c]->in_reply_to_status_id_str != null) {
+			$api = 'statuses/show/'.$tweet[$c]->in_reply_to_status_id_str;
+			$c++;
+			$tweet[$c] = $connection->get($api);
+		}
+		//会話一覧をテスト表示
+		for($i=0; $i<$c+1;$i++) {
+			echo "<br / >";
+ 			echo $tweet[$i]->text;
+		}
 
   	?>
- 	<!-- <img src="./images/photo1.jpg" width="50%" height="50%"> -->
+ 
 	</center>
 </div>

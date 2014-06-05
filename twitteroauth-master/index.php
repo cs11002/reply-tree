@@ -37,34 +37,18 @@ for ( $i=0; $i<5; $i++ ){
 	$tweet .= $json[$i]->created_at;
 
 	if( $json[$i]->in_reply_to_status_id != null ){
+		$id = $json[$i]->id_str;
 		$tweet .= '<form action="modal.php" method="post">';
-		$tweet .= '<input type="hidden" name="tweetID" value="'.$i.'" />';
+		$tweet .= '<input type="hidden" name="tweetID" value="'.$id.'" />';
 		$tweet .= '<button type="submit" class="btn btn-primary">ReplyTree表示</button>';
 		$tweet .= '</form>';
 	}
-
-
-	// if( $json[$i]->in_reply_to_status_id != null ){
-	// 	$tweet .= '<form method="get">';
-	// 	$tweet .= '<a rel="leanModal" href="#div787"><input type="submit" class="btn btn-primary" value="ReplyTree表示" /></a>';
-	// 	$tweet .= '</form>';
-	// }
 
 	$tweet .= '<hr/></article>';
 
 }
 
 $content = $tweet;
-
-// $content = $connection->get('statuses/user_timeline',array('count'=>'5'));
-
-
-/* Some example calls */
-//$connection->get('users/show', array('screen_name' => 'abraham'));
-//$connection->post('statuses/update', array('status' => date(DATE_RFC822)));
-//$connection->post('statuses/destroy', array('id' => 5437877770));
-//$connection->post('friendships/create', array('id' => 9436992));
-//$connection->post('friendships/destroy', array('id' => 9436992));
 
 /* Include HTML to display on the page */
 include('html.inc');
