@@ -62,11 +62,11 @@ $top = 20;
 	for($i=0; $i<$c+1;$i++) {
 		for($j=0;$j<count($tweet_user);$j++){
 			if($tweet[$i]->user->id_str == $tweet_user[$j]){
-				$left = $j*200+50;
+				$left = -300 + 300*($j-1);
 			}
 		}
 		echo '
-<div style="position:absolute;top:'.$top.'px;left:'.$left.'px; border-style: solid ; border-width: 1px; padding: 10px 5px 10px 20px; border-color: white; color: black; background-color: white; width: 400px; border-radius: 30px; box-shadow: 5px 5px 5px #AAA;">';
+<div style="position:relative;left:'.$left.'px; border-style: solid ; border-width: 1px; padding: 10px 5px 10px 20px; border-color: white; color: black; background-color: white; width: 400px; border-radius: 30px; box-shadow: 5px 5px 5px #AAA;">';
 		echo '<article id='.$i.'><img src="'.$tweet[$i]->user->profile_image_url.'"/>';
 		echo '<span>'.$tweet[$i]->user->name.'</span>';
 		echo '@'.$tweet[$i]->user->screen_name.'<br/>';
