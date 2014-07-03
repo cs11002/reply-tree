@@ -24,13 +24,17 @@ $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oau
 
 /* If method is set change API call made. Test is called by default. */
 
-$json = $connection->get('statuses/user_timeline',array('count'=>'5'));
+$json = $connection->get('statuses/user_timeline',array('count'=>'200'));
 
 $tweet = '';
 
-for ( $i=0; $i<5; $i++ ){
+for ( $i=0; $i<count($json); $i++ ){
 
-	$tweet .= '<article id='.$i.'><img src="'.$json[$i]->user->profile_image_url.'"/>';
+	if($i > 10) {
+		$tweet .= '<article id='.$i.' style="display:none"><img src="'.$json[$i]->user->profile_image_url.'"/>';
+	}else{
+		$tweet .= '<article id='.$i.'><img src="'.$json[$i]->user->profile_image_url.'"/>';
+	}
 	$tweet .= '<span>'.$json[$i]->user->name.'</span>';
 	$tweet .= '@'.$json[$i]->user->screen_name.'<br/>';
 	$tweet .= $json[$i]->text.'<br/>';
@@ -44,7 +48,7 @@ for ( $i=0; $i<5; $i++ ){
 		$tweet .= '</form>';
 	}
 
-	$tweet .= '<hr/></article>';
+	$tweet .= "<hr/></article>\n";
 
 }
 
