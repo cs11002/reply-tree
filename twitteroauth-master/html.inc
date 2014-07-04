@@ -17,7 +17,23 @@
     <link rel="shortcut icon" href="images/favicon.ico">
   </head>
   <body>
-    
+
+
+    <nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+      <span class="sr-only">Toggle navigation</span>
+    </button>
+    <a class="navbar-brand" href="#">Reply-tree</a>
+  </div>
+  <div class="collapse navbar-collapse" id="navbar-collapse-01">
+    <ul class="nav navbar-nav">           
+      <li class="active"><a href="#fakelink">Products</a></li>
+      <li><a href="#fakelink">Features</a></li>
+    </ul>           
+   
+  </div><!-- /.navbar-collapse -->
+</nav><!-- /navbar -->
     <!-- modal -->
     <div id="modal">
       <div class="background"></div>
@@ -25,7 +41,7 @@
     </div>
 
     <a href="./index.php">
-      <img src="images/logo.png" id="title"/>
+      <!-- <img src="images/logo.png" id="title"/> -->
     </a>
 
       <?php if (isset($menu)) { ?>
@@ -36,7 +52,7 @@
     <?php } ?>
 
     <section>
-      <article>
+      <article id="post">
         <form action="post.php" method="post">
           <input type="text" name="tweet" placeholder="Tweet..." class="form-control" onkeyup="ShowLength(value);" /><br/>
           <p id="inputlength">0文字/140文字</p>
