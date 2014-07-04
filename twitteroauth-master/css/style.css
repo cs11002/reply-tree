@@ -14,20 +14,16 @@ article {
 	background-color: white;
 	padding:10px;
 }
-section {
-  margin: 0 15%;
+article#post{
+  padding-top: 30px;
+}
+section, div#footer,img#title {
+  margin: 0 10%;
 }
 pre {
 	border: none;
 }
 footer {
-}
-div#footer {
-  margin: 0 15%;
-
-}
-img#title {
-  margin: 0 15%;
 }
 button.btn.btn-info {
 	float: right;	
@@ -50,7 +46,10 @@ input.btn.btn-info {
 input.form-control:focus {
 	border-color: #3498DB;
 }
-
+div.navbar-header {
+  margin: 0 10%;
+  
+}
 /*#lean_overlay{
   position: fixed; z-index:100; 
   top: 0px;
