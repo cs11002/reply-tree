@@ -18,11 +18,11 @@ function setModal() {
 	});
  
 	//クリックされた時にAjaxでコンテンツを読み込む
-	$("input.btn").click(function() {
+	$("input.btn-primary").click(function() {
 		// var str1 = document.tree.tweetID.value;
 		// $("div#modal div.container").load($(this).attr("type"), data="php", onComplete());
 		$("div#modal div.container").load('modal.php', {
-			tweetID: 1
+			tweetID: 466799125611028481
 			}
 			,onComplete());
 		console.log("aaaaa");
