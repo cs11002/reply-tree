@@ -8,21 +8,33 @@
     <link href="./bootstrap/css/bootstrap.css" rel="stylesheet">
     <!-- Loading Flat UI -->
     <link href="css/flat-ui.css" rel="stylesheet">
+    <!-- custom css -->
+
     <link href="./css/style.css" rel="stylesheet">
     <script src="./js/jquery-2.1.1.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="./js/jquery.leanModal.min.js"></script>
+    <script src="./js/modal.js" type="text/javascript"></script>
+
     <link rel="shortcut icon" href="images/favicon.ico">
   </head>
   <body>
+    
+    <!-- modal -->
+    <div id="modal">
+      <div class="background"></div>
+      <div class="container"></div>
+    </div>
+
     <a href="./index.php">
-      <img src="images/logo.png"/>
+      <img src="images/logo.png" id="title"/>
     </a>
+
       <?php if (isset($menu)) { ?>
         <?php echo $menu; ?>
       <?php } ?>
     <?php if (isset($status_text)) { ?>
       <?php echo '<h3>'.$status_text.'</h3>'; ?>
     <?php } ?>
+
     <section>
       <article>
         <form action="post.php" method="post">
@@ -30,8 +42,9 @@
           <p id="inputlength">0文字/140文字</p>
           <input type="submit" class="btn btn-info" value="Tweet" /><br/>
         </form>
+
         <hr>
-<!--
+      <!--
         <a rel="leanModal" href="#div787">Edit</a>
       -->
         
@@ -40,21 +53,12 @@
     </section>
   </body>
   <footer>
-    Reply-treeは現在開発中です
+    <div id="footer">Reply-treeは現在開発中です</div>
   </footer>
   <script type="text/javascript"><!--
-   function ShowLength( str ) {
+    function ShowLength( str ) {
       document.getElementById("inputlength").innerHTML = str.length + "文字/140文字";
    }
 // --></script>
-  <script type="text/javascript">
-    $(function() {
-      $('a[rel*=leanModal]').leanModal({
-        top: 40,
-        overlay : 0.5, 
-        closeButton: ".modal_close",
-      });
-    }); 
-  </script>
 
 </html>

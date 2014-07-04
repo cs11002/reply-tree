@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<meta charset="utf-8">
 <div id="div787">
 	<center>
 		<b>Reply-tree</b><br />	
