@@ -48,7 +48,9 @@ input.form-control:focus {
 }
 div.navbar-header {
   margin: 0 10%;
-  
+}
+ul.nav.navbar-right {
+  padding-right: 150px;
 }
 /*#lean_overlay{
   position: fixed; z-index:100; 

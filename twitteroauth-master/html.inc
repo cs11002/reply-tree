@@ -28,11 +28,15 @@
   </div>
   <div class="collapse navbar-collapse" id="navbar-collapse-01">
     <ul class="nav navbar-nav">           
-      <li class="active"><a href="#fakelink">Products</a></li>
-      <li><a href="#fakelink">Features</a></li>
-    </ul>           
-   
+      <li><a href="#fakelink">Home</a></li>
+      <li><a href="#fakelink">Meition</a></li>
+    </ul> 
+
+    <ul class="nav navbar-right">           
+      <li><a href="#fakelink">User</a></li>
+    </ul>              
   </div><!-- /.navbar-collapse -->
+
 </nav><!-- /navbar -->
     <!-- modal -->
     <div id="modal">
