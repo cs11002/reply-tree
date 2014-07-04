@@ -9,7 +9,6 @@
     <link href="css/flat-ui.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
     <script src="./js/jquery-2.1.1.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="./js/jquery.leanModal.min.js"></script>
     <link rel="shortcut icon" href="images/favicon.ico">
   </head>
  <body>
@@ -56,7 +55,6 @@ for($i=0; $i<$c+1;$i++) {
  }
 }
 
-		
 		
 		//会話一覧をテスト表示
 $top = 20;
