@@ -3,9 +3,6 @@ body {
   height: 100%;
   padding: 0px;
 }
-img {
-	padding:3px;	
-}
 span {
 	font-size: 1.4em;
 	padding:0 10px;
@@ -14,41 +11,46 @@ article {
 	background-color: white;
 	padding: 10px;
 }
-article#post{
-  padding-top: 30px;
-}
 section, div#footer,img#title {
   margin: 0 10%;
 }
 pre {
-	border: none;
+  border: none;
 }
-footer {
+
+/*  nav  */
+div.navbar-header {
+  margin: 0 10%;
 }
-button.btn.btn-info {
+
+/*  post  */
+article#post{
+  padding-top: 30px;
+}
+input.btn.btn-info {
 	float: right;	
+  width: 100px;
 }
+p#inputlength {
+  float: left;
+  padding: 0 10px;
+}
+input.form-control:focus {
+  border-color: #3498DB;
+}
+
+/*  tree   */
 input.btn.btn-primary {
 	float: right;
   margin-top: -30px;
 }
-p#inputlength {
-	float: left;
-	padding: 0 10px;
-}
+
+/*  footer  */
 footer { 
 	margin-top: 10px;
 }
-input.btn.btn-info {
-	float: right;
-  width: 100px;
-}
-input.form-control:focus {
-	border-color: #3498DB;
-}
-div.navbar-header {
-  margin: 0 10%;
-}
+
+/*  modal  */
 div#modal {
   display: none;
   position: fixed;
@@ -79,5 +81,4 @@ form#read-more {
   padding-bottom: 10px;
 }
 input#read-more.btn.btn-default {
-
 }
