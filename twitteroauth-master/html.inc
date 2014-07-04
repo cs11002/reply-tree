@@ -13,7 +13,7 @@
     <link href="./css/style.css" rel="stylesheet">
     <script src="./js/jquery-2.1.1.min.js" type="text/javascript"></script>
     <script src="./js/modal.js" type="text/javascript"></script>
-
+    <script type="text/javascript" src="./js/readmore.js"></script>
     <link rel="shortcut icon" href="images/favicon.ico">
   </head>
   <body>
@@ -50,6 +50,9 @@
         
       </article>
       <?php print_r($content); ?>
+      <form>
+        <input type="button" value="readmore" onclick="readmore()">
+      </form>
     </section>
   </body>
   <footer>
