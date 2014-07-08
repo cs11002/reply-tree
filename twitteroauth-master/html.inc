@@ -30,11 +30,9 @@
         <ul class="nav navbar-nav">           
           <li><a href="./index.php">Home</a></li>
           <li><a href="#fakelink">Meition</a></li>          
-          <li><a href="#fakelink" id="nav-user">User</a></li>
-        </ul>              
-        <div class="navbar-form navbar-right" action="#">
-          <span class="fui-new"></span>
-        </div>
+          <li><a href="#fakelink">User</a></li>
+          <li><span class="fui-new"></span></li>
+        </ul>
       </div><!-- /.navbar-collapse -->
     </nav><!-- /navbar -->
 
@@ -46,14 +44,15 @@
     <?php } ?>
 
     <section>
-      <article id="post">
-        <form action="post.php" method="post">
-          <input type="text" name="tweet" placeholder="Tweet..." class="form-control" onkeyup="ShowLength(value);" /><br/>
-          <p id="inputlength">0文字/140文字</p>
-          <input type="submit" class="btn btn-info" value="Tweet" /><br/>
-        </form>
-        <hr>
-      </article>
+       <div class="arrow_box">
+        <article id="post">
+          <form action="post.php" method="post">
+            <input type="text" name="tweet" placeholder="Tweet..." class="form-control" onkeyup="ShowLength(value);" /><br/>
+            <p id="inputlength">0文字/140文字</p>
+            <input type="submit" class="btn btn-info" value="Tweet" /><br/>
+          </form>
+        </article>
+      </div>
       <?php print_r($content); ?>
       <form id="read-more">
         <center>
@@ -67,9 +66,19 @@
   </footer>
   <script type="text/javascript">
   <!--
-    function ShowLength( str ) {
-      document.getElementById("inputlength").innerHTML = str.length + "文字/140文字";
-   }
+  function ShowLength( str ) {
+    document.getElementById("inputlength").innerHTML = str.length + "文字/140文字";
+  }
+  $(function(){
+    // 「id="post"」を非表示
+    $("#post").css("display", "none");
+
+    // 「class=".fui-new」がクリックされた場合
+    $(".fui-new").click(function(){
+        // 「id="post"」の表示、非表示を切り替える
+      $("#post").toggle();
+    });
+  });
   --></script>
 
 </html>
