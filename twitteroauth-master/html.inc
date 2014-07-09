@@ -50,6 +50,7 @@
             <li><a href="#fakelink">Meition</a></li>          
             <li><a href="#fakelink">User</a></li>
             <li><span class="fui-new"></span></li>
+            <li><a id="logout" href="#fakeLink">Logout</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </nav><!-- /navbar -->
