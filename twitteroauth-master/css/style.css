@@ -1,3 +1,6 @@
+html,body{
+     height:100%;
+}
 body {
 	background-color: #E0FFFF;
   height: 100%;
@@ -17,6 +20,29 @@ section, div#footer,img#title {
 pre {
   border: none;
 }
+.container {
+     width: 100%;
+     position: relative;
+     height:auto !important; /*IE6対策*/
+     height: 100%; /*IE6対策*/
+     min-height: 100%;
+      padding-bottom:140px; 
+  }
+/*  connect  */
+body#connect-top {
+  background-image: url("../images/leaf.jpg");
+}
+#top {
+  padding-top: 20%;
+}
+#sighin {
+  font-size: 1.2em;
+  line-height: 3.0em;
+  padding-top: 5%;
+}
+#sighin-button {
+  margin-left: -30px;
+}
 
 /*  nav  */
 div.navbar-header {
@@ -27,7 +53,6 @@ span.fui-new {
   padding: 15px 21px;
   line-height: 23px;
 }
-
 span.fui-new:hover {
   color: #1abc9c;
   background-color: transparent;  
@@ -93,6 +118,9 @@ input.btn.btn-primary {
 /*  footer  */
 footer { 
 	margin-top: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 /*  modal  */
