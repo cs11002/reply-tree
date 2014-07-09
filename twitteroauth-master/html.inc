@@ -33,48 +33,50 @@
   -->
   </script>
   <body>
-    <!-- modal -->
-    <div id="modal">
-      <div class="background"></div>
-      <div class="container"></div>
-    </div>
-    <!-- navbar -->
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="./index.php">Reply-tree</a>
+    <div id="container">
+      <!-- modal -->
+      <div id="modal">
+        <div class="background"></div>
+        <div class="container"></div>
       </div>
-      <div class="collapse navbar-collapse" id="navbar-collapse-01">
-        <ul class="nav navbar-nav">           
-          <li><a href="./index.php">Home</a></li>
-          <li><a href="#fakelink">Meition</a></li>          
-          <li><a href="#fakelink">User</a></li>
-          <li><span class="fui-new"></span></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </nav><!-- /navbar -->
-    <?php if (isset($menu)) { ?>
-      <?php echo $menu; ?>
+      <!-- navbar -->
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="./index.php">Reply-tree</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-01">
+          <ul class="nav navbar-nav">           
+            <li><a href="./index.php">Home</a></li>
+            <li><a href="#fakelink">Meition</a></li>          
+            <li><a href="#fakelink">User</a></li>
+            <li><span class="fui-new"></span></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav><!-- /navbar -->
+      <?php if (isset($menu)) { ?>
+        <?php echo $menu; ?>
+        <?php } ?>
+      <?php if (isset($status_text)) { ?>
+        <?php echo '<h3>'.$status_text.'</h3>'; ?>
       <?php } ?>
-    <?php if (isset($status_text)) { ?>
-      <?php echo '<h3>'.$status_text.'</h3>'; ?>
-    <?php } ?>
-    <section>
-       <div class="arrow_box"><!-- tweet box -->
-        <article id="post">
-          <form action="post.php" method="post">
-            <input type="text" name="tweet" placeholder="Tweet..." class="form-control" onkeyup="ShowLength(value);" /><br/>
-            <p id="inputlength">0文字/140文字</p>
-            <input type="submit" class="btn btn-info" value="Tweet" /><br/>
-          </form>
-        </article>
-      </div>
-      <?php print_r($content); ?><!-- recent tweet -->
-      <form id="read-more">
-        <center>
-          <input class="btn btn-default" id="read-more" type="button" value="readmore" onclick="readmore()">
-        </center>
-      </form>
-    </section>
+      <section>
+         <div class="arrow_box"><!-- tweet box -->
+          <article id="post">
+            <form action="post.php" method="post">
+              <input type="text" name="tweet" placeholder="Tweet..." class="form-control" onkeyup="ShowLength(value);" /><br/>
+              <p id="inputlength">0文字/140文字</p>
+              <input type="submit" class="btn btn-info" value="Tweet" /><br/>
+            </form>
+          </article>
+        </div>
+        <?php print_r($content); ?><!-- recent tweet -->
+        <form id="read-more">
+          <center>
+            <input class="btn btn-default" id="read-more" type="button" value="readmore" onclick="readmore()">
+          </center>
+        </form>
+      </section>
+    </div>
   </body>
   <footer>
     <div id="footer">Reply-treeは現在開発中です</div>

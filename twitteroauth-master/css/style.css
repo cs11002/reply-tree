@@ -20,13 +20,13 @@ section, div#footer,img#title {
 pre {
   border: none;
 }
-.container {
+div#container {
      width: 100%;
      position: relative;
      height:auto !important; /*IE6対策*/
      height: 100%; /*IE6対策*/
      min-height: 100%;
-      padding-bottom:140px; 
+     padding-bottom: 5%;
   }
 /*  connect  */
 body#connect-top {
@@ -92,7 +92,6 @@ form {
   position: absolute;
   pointer-events: none;
 }
-
 .arrow_box:after {
   border-color: rgba(255, 255, 255, 0);
   border-bottom-color: #ffffff;
@@ -113,14 +112,6 @@ div.arrow_box {
 input.btn.btn-primary {
 	float: right;
   margin-top: -30px;
-}
-
-/*  footer  */
-footer { 
-	margin-top: 10px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
 }
 
 /*  modal  */
@@ -154,4 +145,12 @@ form#read-more {
   padding-bottom: 10px;
 }
 input#read-more.btn.btn-default {
+}
+
+/*  footer  */
+footer { 
+  margin-top: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
