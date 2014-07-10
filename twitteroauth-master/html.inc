@@ -49,6 +49,7 @@
           <li><a href="./index2.php">Mention</a></li>          
           <li><a href="./index3.php">User</a></li>
           <li><span class="fui-new"></span></li>
+          <li><a href="./clearsessions.php">Logout</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </nav><!-- /navbar -->
@@ -69,11 +70,13 @@
         </article>
       </div>
       <?php print_r($content); ?><!-- recent tweet -->
+      <!--
       <form id="read-more">
         <center>
           <input class="btn btn-default" id="read-more" type="button" value="readmore" onclick="readmore()">
         </center>
       </form>
+      -->
     </section>
   </body>
   <footer>

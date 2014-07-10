@@ -54,6 +54,12 @@ for ( $i=0; $i<count($json); $i++ ){
 
 }
 
+$tweet .= "<form id=\"read-more\">\n";
+$tweet .= "<center>\n";
+$tweet .= "<input class=\"btn btn-default\" id=\"read-more\" type=\"button\" value=\"readmore\" onclick=\"readmore()\">\n";
+$tweet .= "</center>\n";
+$tweet .= "</form>\n";
+
 $content = $tweet;
 
 /* Include HTML to display on the page */
