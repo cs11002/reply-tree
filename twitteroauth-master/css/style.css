@@ -9,6 +9,9 @@ body {
 span {
 	padding:0 10px;
 }
+section {
+  margin: 100px 10% 0;
+}
 article { 
 	background-color: white;
   padding: 10px;
@@ -16,7 +19,7 @@ article {
 hr {
   margin: 0;
 }
-section, div#footer,img#title {
+div#footer,img#title {
   margin: 0 10%;
 }
 pre {

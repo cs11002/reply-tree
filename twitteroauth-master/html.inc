@@ -40,7 +40,7 @@
         <div class="container"></div>
       </div>
       <!-- navbar -->
-      <nav class="navbar navbar-default" role="navigation">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="navbar-header">
           <a class="navbar-brand" href="./index.php">Reply-tree</a>
         </div>
