@@ -46,8 +46,8 @@
       <div class="collapse navbar-collapse" id="navbar-collapse-01">
         <ul class="nav navbar-nav">           
           <li><a href="./index.php">Home</a></li>
-          <li><a href="#fakelink">Meition</a></li>          
-          <li><a href="#fakelink">User</a></li>
+          <li><a href="./index2.php">Mention</a></li>          
+          <li><a href="./index3.php">User</a></li>
           <li><span class="fui-new"></span></li>
         </ul>
       </div><!-- /.navbar-collapse -->

@@ -24,7 +24,7 @@ $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oau
 
 /* If method is set change API call made. Test is called by default. */
 
-$json = $connection->get('statuses/home_timeline',array('count'=>'200'));
+$json = $connection->get('statuses/user_timeline',array('count'=>'200'));
 
 $tweet = '';
 
