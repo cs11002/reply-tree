@@ -117,22 +117,22 @@ div.arrow_box {
 
 /*  tweet  */
 span.name {
-  font-size: 1.4em;
+  font-size: 1.2em;
 }
-span.tweet {
+div.tweet {
   font-size: 1.6em;
 }
 .tweet, .time, .buttons {
   padding-left: 60px;
 }
 span.time{
-  text-align: left;
+  text-align: right;  
   font-size: 0.8em;
 }
 .glyphicon-share-alt {
   padding-left: 60px;
 }
-.glyphicon-star, .glyphicon-retweet {
+.glyphicon-retweet, .glyphicon-star, .glyphicon-trash{
   padding-left: 20px;
 }
 

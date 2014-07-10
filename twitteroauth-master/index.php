@@ -38,10 +38,11 @@ for ( $i=0; $i<count($json); $i++ ){
 
 	$tweet .= '<img src="'.$json[$i]->user->profile_image_url.'"/>';
 	$tweet .= '<span class="name">'.$json[$i]->user->name.'</span>';
-	$tweet .= '@'.$json[$i]->user->screen_name.'<br/>';
-	$tweet .= '<span class="tweet">'.$json[$i]->text.'</span><br />';
-	$tweet .= '<span class="glyphicon glyphicon-share-alt"></span>返信<span class="glyphicon glyphicon-retweet"></span>リツイート<span class="glyphicon glyphicon-star"></span>お気に入りに登録';
+	$tweet .= '@'.$json[$i]->user->screen_name.'<br />';
+	$tweet .= '<div class="tweet">'.$json[$i]->text.'</div>';
 	$tweet .= '<span class="time">'.$json[$i]->created_at.'</span><br />';
+	$tweet .= '<span class="glyphicon glyphicon-share-alt"></span>返信<span class="glyphicon glyphicon-retweet"></span>リツイート<span class="glyphicon glyphicon-star"></span>お気に入りに登録<span class="glyphicon glyphicon-trash"></span>ツイートの削除';
+
 
 	if( $json[$i]->in_reply_to_status_id != null ){
 		$id = $json[$i]->id_str;

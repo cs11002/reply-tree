@@ -31,14 +31,17 @@ $tweet = '';
 for ( $i=0; $i<count($json); $i++ ){
 
 	if($i > 10) {
-		$tweet .= '<article id='.$i.' style="display:none"><img src="'.$json[$i]->user->profile_image_url.'"/>';
+		$tweet .= '<article id='.$i.' style="display:none">';
 	}else{
-		$tweet .= '<article id='.$i.'><img src="'.$json[$i]->user->profile_image_url.'"/>';
+		$tweet .= '<article id='.$i.'>';
 	}
-	$tweet .= '<span>'.$json[$i]->user->name.'</span>';
-	$tweet .= '@'.$json[$i]->user->screen_name.'<br/>';
-	$tweet .= $json[$i]->text.'<br/>';
-	$tweet .= $json[$i]->created_at;
+
+	$tweet .= '<img src="'.$json[$i]->user->profile_image_url.'"/>';
+	$tweet .= '<span class="name">'.$json[$i]->user->name.'</span>';
+	$tweet .= '@'.$json[$i]->user->screen_name.'<br />';
+	$tweet .= '<siv class="tweet">'.$json[$i]->text.'</div>';
+	$tweet .= '<span class="time">'.$json[$i]->created_at.'</span><br />';
+	$tweet .= '<span class="glyphicon glyphicon-share-alt"></span>返信<span class="glyphicon glyphicon-retweet"></span>リツイート<span class="glyphicon glyphicon-star"></span>お気に入りに登録<span class="glyphicon glyphicon-trash"></span>ツイートの削除';
 
 	if( $json[$i]->in_reply_to_status_id != null ){
 		$id = $json[$i]->id_str;
@@ -54,11 +57,11 @@ for ( $i=0; $i<count($json); $i++ ){
 
 }
 
-$tweet .= "<form id=\"read-more\">\n";
-$tweet .= "<center>\n";
-$tweet .= "<input class=\"btn btn-default\" id=\"read-more\" type=\"button\" value=\"readmore\" onclick=\"readmore()\">\n";
-$tweet .= "</center>\n";
-$tweet .= "</form>\n";
+// $tweet .= "<form id=\"read-more\">\n";
+// $tweet .= "<center>\n";
+// $tweet .= "<input class=\"btn btn-default\" id=\"read-more\" type=\"button\" value=\"readmore\" onclick=\"readmore()\">\n";
+// $tweet .= "</center>\n";
+// $tweet .= "</form>\n";
 
 $content = $tweet;
 
