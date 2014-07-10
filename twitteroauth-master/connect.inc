@@ -22,22 +22,19 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="./index.php">Reply-tree</a>
         </div>
-      </nav><!-- /navbar -->
+      </nav><!-- navbar -->
       <?php if (isset($menu)) { ?>
         <?php echo $menu; ?>
         <?php } ?>
       <?php if (isset($status_text)) { ?>
         <?php echo '<h3>'.$status_text.'</h3>'; ?>
       <?php } ?>
-       <section>
-        <center>
+      <section id="center">
           <h1 id="top">会話を、見よう。</h1>
           <div id="sighin">
             Reply-treeはtwitterのリプライをツリー表示します。<br/>
-            
-              <?php print_r($content); ?>
+            <?php print_r($content); ?>
           </div><!-- sighin -->
-        </center>  
       </section>
     </div>
   </body>

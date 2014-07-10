@@ -38,6 +38,11 @@ div#container {
 body#connect-top {
   background-image: url("../images/leaf.jpg");
 }
+#center {
+  text-align: center;
+  top: 75%;
+  margin-top: 0;
+}
 #top {
   padding-top: 20%;
 }
