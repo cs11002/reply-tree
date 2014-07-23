@@ -46,13 +46,12 @@ for ( $i=0; $i<count($json); $i++ ){
 
 	if( $json[$i]->in_reply_to_status_id != null ){
 		$id = $json[$i]->id_str;
-		$tweet .= '<form action="modal.php" method="post" name="tree" >';
+		$tweet .= '<form action="modal.php" method="post">';
 		$tweet .= '<input type="hidden" name="tweetID" value="'.$id.'" />';
-		// $tweet .= '<a href="modal.php" class="modal">';
-		$tweet .= '<input type="submit" class="btn btn-primary" value="ReplyTree表示" />';
-		// $tweet .= '</a>';
+		$tweet .= '<button type="submit" class="btn btn-primary">ReplyTree表示2</button>';
 		$tweet .= '</form>';
 	}
+
 
 	$tweet .= "<hr/></article>\n";
 

@@ -146,7 +146,7 @@ span.time{
 
 
 /*  tree   */
-input.btn.btn-primary {
+button.btn.btn-primary {
 	float: right;
   margin-top: -30px;
 }
