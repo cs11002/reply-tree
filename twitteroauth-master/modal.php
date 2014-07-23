@@ -9,7 +9,7 @@
     <link href="css/flat-ui.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
     <script src="./js/jquery-2.1.1.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="./js/jquery.leanModal.min.js"></script>
+    <!-- <script type="text/javascript" src="./js/jquery.leanModal.min.js"></script> -->
     <link rel="shortcut icon" href="images/favicon.ico">
   </head>
  <body>
@@ -65,9 +65,8 @@
 						$left = $j*200+50;
 					}
 				}
-				
-		echo '
-<div style="position:absolute;top:'.$top.'px;left:'.$left.'px; border-style: solid ; border-width: 1px; padding: 10px 5px 10px 20px; border-color: white; color: black; background-color: white; width: 400px; border-radius: 30px; box-shadow: 5px 5px 5px #AAA;">';
+
+		echo '<div class="leaf" style="top:'.$top.'px;left:'.$left.'px;">';
 		echo '<article id='.$i.'><img src="'.$tweet[$i]->user->profile_image_url.'"/>';
 		echo '<span>'.$tweet[$i]->user->name.'</span>';
 		echo '@'.$tweet[$i]->user->screen_name.'<br/>';
