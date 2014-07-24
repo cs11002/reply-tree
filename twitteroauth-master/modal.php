@@ -60,6 +60,11 @@
 					$api = 'statuses/show/'.$tweet[$c]->in_reply_to_status_id_str;
 					$c++;
 					$tweet[$c] = $connection->get($api);
+					
+					if(array_key_exists('errors',$tweet[$c])) { //もしツイ消し等でたどれなくなったら配列を-1して終了
+						$c--;
+						break;
+					}					
 				}
 		
 				$tweet_user = array(); //ツイートした人を入れる配列
@@ -80,6 +85,20 @@
 								$tweet_user[$u_c] = $tweetdata->user->id_str;
 							}
 						}
+		$u_c = 0; //ユーサごとに数字を振る用
+		
+		for($i=0; $i<$c+1;$i++) {
+			$tweetdata = $tweet[$i]; //tweetdataにツイートを入れる
+			if($i == 0){
+				$tweet_user[$i] = $tweetdata->user->id_str;//最初のユーザ用
+			}else{
+				$u_c = count($tweet_user);//
+				for($j=0;$j<$u_c;$j++){
+					if(intval($tweetdata->user->id_str) == $tweet_user[$j]) {
+						break;
+					}
+					if($j == ($u_c-1)){
+						$tweet_user[$u_c] = $tweetdata->user->id_str;
 					}
 				}
 
@@ -103,6 +122,29 @@
 				}
 			
 			?>
+				//会話一覧を表示
+	for($i=0; $i<$c+1;$i++) {
+		for($j=0;$j<count($tweet_user);$j++){
+			if($tweet[$i]->user->id_str == $tweet_user[$j]){
+				$left =  150*($j);
+				break;
+				echo $j.'-'.$left.'<br>';
+			}
+		}
+		$j=0;
+		echo '<div style="font-size: 9px; position:relative;left:'.$left.'px; border-style: solid ; border-width: 1px; padding: 10px 5px 10px 20px; border-color: white; color: black; background-color: white; width: 200px; border-radius: 15px; box-shadow: 3px 3px 3px #AAA;">';
+		echo '<img src="'.$tweet[$i]->user->profile_image_url.'" width="40px" align="left"/>';
+		echo '<span style="font-size: 12px;">'.$tweet[$i]->user->name.'</span>';
+		echo '@'.$tweet[$i]->user->screen_name.'<br clear="left"/>';
+		echo $tweet[$i]->text.'<br/>';
+		echo $tweet[$i]->created_at;
+		echo'</div></br>';
+
+
+			}
+		  	?>
+	 
+			<!-- </center> -->
 		<!--</div>-->
 		</div><!-- #container -->
  	</body>
