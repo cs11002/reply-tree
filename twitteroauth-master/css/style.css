@@ -151,16 +151,16 @@ button.btn.btn-primary {
 /*  leaf  */
 div.leaf {
   background-color: white;
-  border-color: white;
   border-radius: 15px;
+/*  border-color: white;
   border-style: solid;
   border-width: 1px;
-  box-shadow: 5px 5px 5px #AAA;
+  box-shadow: 5px 5px 5px #AAA;*/
   color: black;
-  font-size: 9px;
+  font-size: 16px;
   padding: 10px 5px 10px 20px;
   position:relative;
-  width: 200px;
+  width: 400px;
 }
 
 /*  modal  */
