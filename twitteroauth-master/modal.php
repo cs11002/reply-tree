@@ -96,7 +96,7 @@
 			}
 		}
 		$j=0;
-		echo '<div style="font-size: 9px; position:relative;left:'.$left.'px; border-style: solid ; border-width: 1px; padding: 10px 5px 10px 20px; border-color: white; color: black; background-color: white; width: 200px; border-radius: 15px; box-shadow: 3px 3px 3px #AAA;">';
+		echo '<div class="leaf" style="left:'.$left.'px;">';
 		echo '<img src="'.$tweet[$i]->user->profile_image_url.'" width="40px" align="left"/>';
 		echo '<span style="font-size: 12px;">'.$tweet[$i]->user->name.'</span>';
 		echo '@'.$tweet[$i]->user->screen_name.'<br clear="left"/>';
