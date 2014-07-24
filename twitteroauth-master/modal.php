@@ -60,18 +60,24 @@
 					$api = 'statuses/show/'.$tweet[$c]->in_reply_to_status_id_str;
 					$c++;
 					$tweet[$c] = $connection->get($api);
+					
+					if(array_key_exists('errors',$tweet[$c])) { //もしツイ消し等でたどれなくなったら配列を-1して終了
+						$c--;
+						break;
+					}					
 				}
 
 		$tweet_user = array(); //ツイートした人を入れる配列
 		$tweet_user[0] = -1;
 		
-		$u_c = 0;
+		$u_c = 0; //ユーサごとに数字を振る用
+		
 		for($i=0; $i<$c+1;$i++) {
-			$tweetdata = $tweet[$i];
+			$tweetdata = $tweet[$i]; //tweetdataにツイートを入れる
 			if($i == 0){
-				$tweet_user[$i] = $tweetdata->user->id_str;
+				$tweet_user[$i] = $tweetdata->user->id_str;//最初のユーザ用
 			}else{
-				$u_c = count($tweet_user);
+				$u_c = count($tweet_user);//
 				for($j=0;$j<$u_c;$j++){
 					if(intval($tweetdata->user->id_str) == $tweet_user[$j]) {
 						break;
@@ -83,7 +89,7 @@
 			}	
 		}
 
-				//会話一覧をテスト表示
+				//会話一覧を表示
 	for($i=0; $i<$c+1;$i++) {
 		for($j=0;$j<count($tweet_user);$j++){
 			if($tweet[$i]->user->id_str == $tweet_user[$j]){
