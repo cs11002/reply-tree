@@ -69,9 +69,6 @@ span.fui-new:hover {
   color: #1abc9c;
   background-color: transparent;  
 }
-a#logout {
-  margin-left: 120%;
-}
 
 /*  post  */
 article#post{
