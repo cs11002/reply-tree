@@ -68,34 +68,32 @@
 				}
 
 		$tweet_user = array(); //ツイートした人を入れる配列
-		$tweet_user[0] = -1;
-		
+		$tweet_user[0] = -1;//とりあえず-1入れとくやつ
 		$u_c = 0; //ユーサごとに数字を振る用
 		
 		for($i=0; $i<$c+1;$i++) {
 			$tweetdata = $tweet[$i]; //tweetdataにツイートを入れる
 			if($i == 0){
-				$tweet_user[$i] = $tweetdata->user->id_str;//最初のユーザ用
+				$tweet_user[$i] = $tweetdata->user->id_str;//最初のユーザIDをTweet_userに格納
 			}else{
-				$u_c = count($tweet_user);//
+				$u_c = count($tweet_user);//配列の長さを取得
 				for($j=0;$j<$u_c;$j++){
-					if(intval($tweetdata->user->id_str) == $tweet_user[$j]) {
+					if(intval($tweetdata->user->id_str) == $tweet_user[$j]) {//既に登録されたIDならbreak
 						break;
 					}
-					if($j == ($u_c-1)){
+					if($j == ($u_c-1)){//まだ登録されていないIDはtweet_userの[$u_c-1]番目に格納
 						$tweet_user[$u_c] = $tweetdata->user->id_str;
 					}
 				}
-			}	
+			}
 		}
 
 				//会話一覧を表示
 	for($i=0; $i<$c+1;$i++) {
-		for($j=0;$j<count($tweet_user);$j++){
+		for($j=0;$j<count($tweet_user);$j++){//jの値によってユーザが何番目か分かる
 			if($tweet[$i]->user->id_str == $tweet_user[$j]){
 				$left =  150*($j);
 				break;
-				echo $j.'-'.$left.'<br>';
 			}
 		}
 		$j=0;
@@ -106,10 +104,8 @@
 		echo $tweet[$i]->text.'<br/>';
 		echo $tweet[$i]->created_at;
 		echo'</div></br>';
-
-
-			}
-		  	?>
+	}
+	?>
 	 
 			<!-- </center> -->
 		<!--</div>-->
