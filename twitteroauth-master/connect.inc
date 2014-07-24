@@ -30,11 +30,11 @@
         <?php echo '<h3>'.$status_text.'</h3>'; ?>
       <?php } ?>
       <section id="center">
-          <h1 id="top">会話を、見よう。</h1>
-          <div id="sighin">
-            Reply-treeはtwitterのリプライをツリー表示します。<br/>
-            <?php print_r($content); ?>
-          </div><!-- sighin -->
+        <h1 id="top">会話を、見よう。</h1>
+        <div id="sighin">
+          Reply-treeはtwitterのリプライをツリー表示します。<br/>
+          <?php print_r($content); ?>
+        </div><!-- sighin -->
       </section>
     </div>
   </body>
