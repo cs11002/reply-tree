@@ -62,32 +62,46 @@
 					$tweet[$c] = $connection->get($api);
 				}
 
-				$tweet_user = array();
-
-				for($i=0; $i<$c+1;$i++) {
-					$tweetdata = $tweet[$i];
-				  if(!array_key_exists($tweetdata->user->id_str,$tweet_user)) {
-				    $tweet_user[] = $tweetdata->user->id_str;
-				  }
+		$tweet_user = array(); //ツイートした人を入れる配列
+		$tweet_user[0] = -1;
+		
+		$u_c = 0;
+		for($i=0; $i<$c+1;$i++) {
+			$tweetdata = $tweet[$i];
+			if($i == 0){
+				$tweet_user[$i] = $tweetdata->user->id_str;
+			}else{
+				$u_c = count($tweet_user);
+				for($j=0;$j<$u_c;$j++){
+					if(intval($tweetdata->user->id_str) == $tweet_user[$j]) {
+						break;
+					}
+					if($j == ($u_c-1)){
+						$tweet_user[$u_c] = $tweetdata->user->id_str;
+					}
 				}
+			}	
+		}
 
 				//会話一覧をテスト表示
-				$top = 80;
-					for($i=0; $i<$c+1;$i++) {
-						for($j=0;$j<count($tweet_user);$j++){
-							if($tweet[$i]->user->id_str == $tweet_user[$j]){
-								$left = $j*200+50;
-							}
-						}
+	for($i=0; $i<$c+1;$i++) {
+		for($j=0;$j<count($tweet_user);$j++){
+			if($tweet[$i]->user->id_str == $tweet_user[$j]){
+				$left =  150*($j);
+				break;
+				echo $j.'-'.$left.'<br>';
+			}
+		}
+		$j=0;
+		echo '<div style="font-size: 9px; position:relative;left:'.$left.'px; border-style: solid ; border-width: 1px; padding: 10px 5px 10px 20px; border-color: white; color: black; background-color: white; width: 200px; border-radius: 15px; box-shadow: 3px 3px 3px #AAA;">';
+		echo '<img src="'.$tweet[$i]->user->profile_image_url.'" width="40px" align="left"/>';
+		echo '<span style="font-size: 12px;">'.$tweet[$i]->user->name.'</span>';
+		echo '@'.$tweet[$i]->user->screen_name.'<br clear="left"/>';
+		echo $tweet[$i]->text.'<br/>';
+		echo $tweet[$i]->created_at;
+		echo'</div></br>';
 
-				echo '<div class="leaf" style="top:'.$top.'px;left:'.$left.'px;">';
-				echo '<article id='.$i.'><img src="'.$tweet[$i]->user->profile_image_url.'"/>';
-				echo '<span>'.$tweet[$i]->user->name.'</span>';
-				echo '@'.$tweet[$i]->user->screen_name.'<br/>';
-				echo $tweet[$i]->text.'<br/>';
-				echo $tweet[$i]->created_at;
-				echo'</div></br>';
-				$top = $top + 300;
+
 			}
 		  	?>
 	 
