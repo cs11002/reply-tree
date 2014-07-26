@@ -18,19 +18,19 @@ article {
 hr {
   margin: 0;
 }
-div#footer,img#title {
+div#footer {
   margin: 0 10%;
 }
 pre {
   border: none;
 }
 div#container {
-     width: 100%;
-     position: relative;
-     height:auto !important; /*IE6対策*/
-     height: 100%; /*IE6対策*/
-     min-height: 100%;
-     padding-bottom: 5%;
+  width: 100%;
+  position: relative;
+  height:auto !important; /*IE6対策*/
+  height: 100%; /*IE6対策*/
+  padding-bottom: 5%;
+  min-height: 100%;
   }
 
 /*  connect  */
@@ -203,7 +203,6 @@ input#read-more.btn.btn-default {
 /*  footer  */
 footer { 
   margin-top: 10px;
-  position: fixed;
   bottom: 0;
   width: 100%;
 }
