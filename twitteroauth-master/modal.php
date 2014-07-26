@@ -12,8 +12,8 @@
     <!-- <script type="text/javascript" src="./js/jquery.leanModal.min.js"></script> -->
     <link rel="shortcut icon" href="images/favicon.ico">
   </head>
- <body>
-    <div id="container">
+  <body>
+    <div id="wrapper">
 			<?php session_start(); ?>
 			<!--<div id="div787">-->
 			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
