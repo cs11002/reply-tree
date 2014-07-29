@@ -100,7 +100,7 @@
 				}
 				return true;
 			}
-
+			rsort($tweet);//配列を降順にソート
 				
 				$tweet_user = array(); //ツイートした人を入れる配列
 				$tweet_user[0] = -1;//とりあえず-1入れとくやつ
