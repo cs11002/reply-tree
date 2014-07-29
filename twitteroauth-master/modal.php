@@ -52,20 +52,56 @@
 				$c = 0;
 				$tweet = array();//会話一覧を保持する配列
 				$tweet[$c] = $connection->get($api);
-				$tweet_u_id = array();
+				$timeline = $connection->get('statuses/home_timeline',array('count'=>'20')); //枝分かれをつくるためTLを取得(とりあえず20)
 
+				$get_timeline = count($timeline); //取得したTLの数を数える
 
-		 		//最初のツイートからリプライをたどる
+		 		//最初のツイートからリプライをたどる部分
+				
+				$find = 0;//TLの中に関係あるtweetを見つけたら数えるやつ
 			 	while($tweet[$c]->in_reply_to_status_id_str != null) {
-					$api = 'statuses/show/'.$tweet[$c]->in_reply_to_status_id_str;
-					$c++;
-					$tweet[$c] = $connection->get($api);
+
+					search_rp($c-$find);//取得したTLの中で、今回のリプライに関係しているつぶやきを探す（枝分かれをつくるため）
 					
+					$api = 'statuses/show/'.$tweet[$c-$find]->in_reply_to_status_id_str;//rp元をたどる
+					$c++;//添字を+1
+					$tweet[$c] = $connection->get($api);//rp元を配列に入れる
+
 					if(array_key_exists('errors',$tweet[$c])) { //もしツイ消し等でたどれなくなったら配列を-1して終了
 						$c--;
 						break;
-					}					
+					}
 				}
+				
+			function search_rp($c_f) {//取得したTLの中で、今回のリプライに関係しているつぶやきを探すやつ（枝分かれをつくるため）
+				global $timeline,$tweet,$c,$find,$get_timeline;//globalな男でありたい（照
+				for($i=0;$i<$get_timeline;$i++){//取得したTLの中で、今回のリプライに関係しているつぶやきを探す
+						if(($timeline[$i]->in_reply_to_status_id_str != null) && ($timeline[$i]->in_reply_to_status_id_str == $tweet[$c_f]->id_str) ){//TLのつぶやき一つ一つのrp元のIDを検索していく
+							if(check_tw($timeline[$i]->id_str)){//見つかったtweetが既に配列に追加されているかどうか判別
+								$c++;
+								$tweet[$c] = $timeline[$i];//未登録なら追加
+								$find++;
+								search_rp($c);//追加したtweetの枝が更に伸びるか探索（再帰）
+							}
+							
+						}
+				}
+				return 0 ;
+			}
+			
+			
+			function check_tw($text){//取得したツイートが既に配列に入っているかチェックするやつ（良いライブラリあったら教えて♡）
+				global $tweet;
+				$arraycount = count($tweet);
+				for($i=0;$i<$arraycount;$i++){
+					if($tweet[$i]->id_str == $text){
+						return false;
+					}
+				}
+				return true;
+			}
+
+				
 				$tweet_user = array(); //ツイートした人を入れる配列
 				$tweet_user[0] = -1;//とりあえず-1入れとくやつ
 				$u_c = 0; //ユーサごとに数字を振る用
