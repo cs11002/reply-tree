@@ -9,7 +9,7 @@
     <link href="css/flat-ui.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
     <!--<script src="./js/jquery-2.1.1.min.js" type="text/javascript"></script>-->
-    <script type="text/javascript">
+    <script type="text/javascript">//このjavascriptは全て直線を表示する用(http://jsfiddle.net/kDs2Q/45/)
 		function connect(div1, div2, color, thickness) {
 			var off1 = getOffset(div1);
 			var off2 = getOffset(div2);
@@ -185,10 +185,11 @@
 					
 				}
 //				echo 'こんにちは';
-				
+
+				//直線を表示する用
 				$c_l =count($linetable);
-				echo'<script>';
-				for($i=0;$i<$c_l;$i++){
+				echo'<script>';//javascriptで記述
+				for($i=0;$i<$c_l;$i++){//php→画像表示→javascriptの順番で実行されないと、divの位置を正確に取得できないため表示がズレます（特にF5押下時）
 					echo'var div1 = document.getElementById("'.$tweet[$i]->id_str.'");
 					var div2 = document.getElementById("'.$tweet[$i]->in_reply_to_status_id_str.'");
 					connect(div1, div2, "#BBB", 10);';
