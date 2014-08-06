@@ -48,7 +48,7 @@ for ( $i=0; $i<count($json); $i++ ){
 		$id = $json[$i]->id_str;
 		$tweet .= '<form action="modal.php" method="post">';
 		$tweet .= '<input type="hidden" name="tweetID" value="'.$id.'" />';
-		$tweet .= '<button type="submit" class="btn btn-primary">ReplyTree表示2</button>';
+		$tweet .= '<button type="submit" class="btn btn-primary">ReplyTree</button>';
 		$tweet .= '</form>';
 	}
 
